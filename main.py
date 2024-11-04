@@ -1,4 +1,4 @@
-import DataPreparer, SpellingEvaluator
+import DataPreparer, SpellingEvaluator, Plotter
 import argparse
 import os
 
@@ -20,9 +20,18 @@ def main():
 
         evaluator = SpellingEvaluator.SpellingEvaluator(data, args.sample)
         evaluator.prepSample()
-        # textblob_counter, spellchecker_counter, total_counter = evaluator.UseSpellCheckers()
-        # print(evaluator.sample_data)
-        print(evaluator.UseSpellCheckers())
+
+        textblob_counter, spellchecker_counter, total_counter = evaluator.GetAccuracy()
+        (textblob_precision, spellchecker_precision), (textblob_recall, spellchecker_recall), (textblob_f1, spellchecker_f1) = evaluator.GetF_Score()
+
+        metrics = ["Accuracy", "Precision", "Recall", "F1 Score"]
+        textblob_values = [textblob_counter/total_counter, textblob_precision, textblob_recall, textblob_f1]
+        spellchecker_values = [spellchecker_counter/total_counter, spellchecker_precision, spellchecker_recall, spellchecker_f1]
+
+        plotter = Plotter.Plotter(metrics)
+        plotter.plotBarChart("PySpellChecker", spellchecker_values)
+        plotter.plotBarChart("TextBlob", textblob_values)
+
 
 
 if __name__ == "__main__":
