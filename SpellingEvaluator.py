@@ -8,7 +8,7 @@ from sklearn.metrics import precision_score, recall_score, f1_score
 class SpellingEvaluator:
     def __init__(self, data, sample):
         self.data = data
-        self.sample = sample
+        self.sample = sample if len(data.keys()) >= sample else len(data.keys())
 
     def prepSample(self):
         sample_keys = random.sample(list(self.data.keys()), self.sample)
