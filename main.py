@@ -20,8 +20,9 @@ def main():
 
         evaluator = SpellingEvaluator.SpellingEvaluator(data, args.sample)
         evaluator.prepSample()
-        print(evaluator.sample_data)
-
+        # textblob_counter, spellchecker_counter, total_counter = evaluator.UseSpellCheckers()
+        # print(evaluator.sample_data)
+        print(evaluator.UseSpellCheckers())
 
 
 if __name__ == "__main__":
