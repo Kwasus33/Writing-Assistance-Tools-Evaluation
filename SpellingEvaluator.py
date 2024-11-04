@@ -1,4 +1,10 @@
 import random
+from textblob import TextBlob
+from spellchecker import SpellChecker
+
+from symspellpy import SymSpell, Verbosity
+import pkg_resources
+
 
 class SpellingEvaluator:
     def __init__(self, data, sample):
