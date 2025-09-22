@@ -56,9 +56,9 @@ Evaluates available writing assistance tools
 
     The eesults of an example script execution are saved as bar charts in .png format: 
    
-    ![PySpellChecker_Metrics.png](PySpellChecker_Metrics.png)
+    ![PySpellChecker_Metrics.png](results/PySpellChecker_Metrics.png)
     
-    ![TextBlob_Metrics.png](TextBlob_Metrics.png)
+    ![TextBlob_Metrics.png](results/TextBlob_Metrics.png)
 
 
 ## Run and locally reproduce the results
@@ -66,6 +66,7 @@ Evaluates available writing assistance tools
 * __prepare environment__
 
    ```shell
+    # Ubuntu / MacOS
     python3 -m venv venv
     source venv/bin/activate
     pip install -r requirements.txt
@@ -82,4 +83,4 @@ Evaluates available writing assistance tools
     - __it's strongly recommended to reproduce results using '_missp.txt_' dataset which is already correctly formatted for DataPreparer.readData(path) method or preapare own dataset__
 
 * __reproduced results__
-    - results of running script and evaluating both libs are saved as bar charts in files _'PySpellChecker_Metrics.png'_ and _'TextBlob_Metrics.png'_
+    - results of running script and evaluating both libs are saved as bar charts in files _'results/PySpellChecker_Metrics.png'_ and _'results/TextBlob_Metrics.png'_

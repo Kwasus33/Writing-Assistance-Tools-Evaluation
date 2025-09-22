@@ -1,8 +1,8 @@
-class DataPreparer:
+class DataReader:
     def __init__(self):
         self.data = {}
 
-    def readData(self, path):
+    def read_data(self, path):
         with open(path) as fh:
             for line in fh:
                 line = line.strip()
